@@ -1,0 +1,13 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Number: {{ invoice.number }}</h1>
+
+  <p><strong>Date:</strong> <a href="">{{ invoice.date }}</a></p> <!-- author detail link not yet defined -->
+  <p><strong>Working period:</strong> {{ invoice.working_period }}</p>
+  <p><strong>Net:</strong> {{ invoice.net }} €</p> 
+  <p><strong>Tax:</strong> {{ invoice.tax }} €</p>  
+  <p><strong>Gross:</strong> {{ invoice.gross }} €</p>  
+  <p><strong>Document:</strong> <a href="">{{ invoice.document }}</a></p>  
+
+{% endblock %}

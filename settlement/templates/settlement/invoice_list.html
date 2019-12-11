@@ -1,0 +1,32 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Invoice List</h1>
+  {% if invoice_list %}
+
+  <table class="table table-hover table-sm">
+    <thead >
+      <th scope="col">Number</th>
+      <th scope="col">Date</th>
+      <th scope="col">Period</th>
+      <th scope="col">Net</th>
+      <th scope="col">Tax</th>
+      <th scope="col">Gross</th>
+      <th scope="col">Document</th>
+    </thead>
+    {% for invoice in invoice_list %}
+    <tr>
+      <td><a href="{{ invoice.get_absolute_url }}">{{ invoice.number }}</a></td>
+      <td>{{ invoice.date }}</td>
+      <td>{{ invoice.working_period }}</td>
+      <td>{{ invoice.net }}</td>
+      <td>{{ invoice.tax }}</td>
+      <td>{{ invoice.gross }}</td>
+      <td><a href="{{ invoice.document }}">Open document</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% else %}
+    <p>There are no invoices.</p>
+  {% endif %}       
+{% endblock %}

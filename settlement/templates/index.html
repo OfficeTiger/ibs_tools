@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>IBS Settlements Home</h1>
+  <p>Welcome to IBS Settlements, a website developed by <em>mozilla, google, stackoverflow, and myself</em>!</p>
+  <h2>Dynamic content</h2>
+  <p>The settlement database has the following record counts:</p>
+  <ul>
+    <li><strong>Invoices:</strong> {{ num_invoices }}</li>
+    <li><strong>Time sheets:</strong> {{ num_time_sheets }}</li>
+  </ul>
+{% endblock %}
